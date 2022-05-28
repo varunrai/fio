@@ -16,7 +16,7 @@ jobs:
     - name: configure
       run: ./configure
     - name: make
-      run: ./make
+      run: make
     # upload artifact, game binary
     - name: Upload Example binary
       uses: actions/upload-artifact@v1
