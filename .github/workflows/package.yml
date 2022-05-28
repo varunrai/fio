@@ -18,8 +18,8 @@ jobs:
     - name: make
       run: make
     # upload artifact, game binary
-    - name: Upload Example binary
+    - name: FIO binary
       uses: actions/upload-artifact@v1
       with:
         name: upload binary
-        path: bin/
+        path: fio
