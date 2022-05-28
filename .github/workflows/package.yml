@@ -15,7 +15,17 @@ jobs:
     - uses: actions/checkout@v3
     - name: configure
       run: ./configure
-    - name: make
-      run: make
-    - name: make install
-      run: make install
+    - name: mkdir
+      run: mkdir build
+    - name: cmake build
+      run: cmake -Bbuild -H.
+    - name: cmake make
+      run: cmake --build build/ --target all
+      env:
+        MAKEFLAGS: "-j2"
+    # upload artifact, game binary
+    - name: Upload Example binary
+      uses: actions/upload-artifact@v1
+      with:
+        name: upload binary
+        path: build/src/Example
